@@ -7,7 +7,7 @@ public class PreparedStatementExample {
         String password = "your_password";
 
         try {
-            // Class.forName("com.mysql.cj.jdbc.Driver"); // Not necessary in modern JDBC
+            Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection(url, user, password);
             System.out.println("Connected!");
 

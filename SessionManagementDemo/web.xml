@@ -1,0 +1,21 @@
+<web-app>
+    <servlet>
+        <servlet-name>CreateCookieDemo</servlet-name>
+        <servlet-class>CreateCookieDemo</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>CreateCookieDemo</servlet-name>
+        <url-pattern>/CreateCookieDemo</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>LoginServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+</web-app>
