@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Validation</title>
+  <style>
+    body {
+      font-family: Arial;
+      margin: 40px;
+    }
+    form {
+      width: 300px;
+      margin: auto;
+      border: 1px solid #ccc;
+      padding: 15px;
+      border-radius: 8px;
+    }
+    input {
+      width: 95%;
+      padding: 6px;
+      margin: 5px 0;
+    }
+    button {
+      width: 100%;
+      padding: 8px;
+      font-size: 16px;
+    }
+    .error {
+      color: red;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2 style="text-align:center;">Registration Form</h2>
+
+  <form onsubmit="return validateForm()">
+    <label>Username:</label><br>
+    <input type="text" id="username"><br>
+
+    <label>Email:</label><br>
+    <input type="text" id="email"><br>
+
+    <label>Date of Birth:</label><br>
+    <input type="date" id="dob"><br>
+
+    <label>Age:</label><br>
+    <input type="number" id="age"><br>
+
+    <label>Password:</label><br>
+    <input type="password" id="password"><br>
+
+    <label>Roll No:</label><br>
+    <input type="text" id="rollno"><br><br>
+
+    <button type="submit">Submit</button>
+
+    <p id="errorMsg" class="error"></p>
+  </form>
+
+  <script>
+    function validateForm() {
+      let username = document.getElementById("username").value.trim();
+      let email = document.getElementById("email").value.trim();
+      let dob = document.getElementById("dob").value;
+      let age = document.getElementById("age").value;
+      let password = document.getElementById("password").value;
+      let rollno = document.getElementById("rollno").value.trim();
+      let error = document.getElementById("errorMsg");
+
+      // Username
+      if (username === "") {
+        error.textContent = "Please enter a username.";
+        return false;
+      }
+
+      // Email
+      let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+      if (!email.match(emailPattern)) {
+        error.textContent = "Enter a valid email address.";
+        return false;
+      }
+
+      // DOB
+      if (dob === "") {
+        error.textContent = "Please select your date of birth.";
+        return false;
+      }
+
+      // Age
+      if (age === "" || age <= 0) {
+        error.textContent = "Please enter a valid age.";
+        return false;
+      }
+
+      // Password
+      if (password.length < 6) {
+        error.textContent = "Password must be at least 6 characters.";
+        return false;
+      }
+
+      // Roll No
+      let rollPattern = /^[0-9]{4,}$/; // example: 1234 or more digits
+      if (!rollno.match(rollPattern)) {
+        error.textContent = "Roll number must contain only digits (min 4).";
+        return false;
+      }
+
+      // If all valid
+      alert("Form submitted successfully!");
+      error.textContent = "";
+      return true;
+    }
+  </script>
+
+</body>
+</html>
