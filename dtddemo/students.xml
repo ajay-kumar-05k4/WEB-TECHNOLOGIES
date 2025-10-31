@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE students SYSTEM "students.dtd">
+<students>
+    <student id="101">
+        <name>Ajay Kumar</name>
+        <age>21</age>
+        <department>CSE</department>
+    </student>
+    <student id="102">
+        <name>Sneha</name>
+        <age>22</age>
+        <department>ECE</department>
+    </student>
+</students>
