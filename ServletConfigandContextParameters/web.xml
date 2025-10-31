@@ -1,0 +1,22 @@
+<web-app>
+    <!-- Context Parameters (Common for all servlets) -->
+    <context-param>
+        <param-name>college</param-name>
+        <param-value>CVR College of Engineering</param-value>
+    </context-param>
+
+    <!-- Servlet Configuration -->
+    <servlet>
+        <servlet-name>ConfigContextDemo</servlet-name>
+        <servlet-class>ConfigContextDemo</servlet-class>
+        <init-param>
+            <param-name>trainer</param-name>
+            <param-value>Ajay Kumar</param-value>
+        </init-param>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ConfigContextDemo</servlet-name>
+        <url-pattern>/ConfigContextDemo</url-pattern>
+    </servlet-mapping>
+</web-app>
